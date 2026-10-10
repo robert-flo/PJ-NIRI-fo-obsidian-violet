@@ -2,6 +2,7 @@ node_modules/
 test-vault/
 *.log
 docs/
+!docs/agents/
 *.png
 !assets/screenshots/violet-light.png
 !assets/screenshots/violet-dark.png
