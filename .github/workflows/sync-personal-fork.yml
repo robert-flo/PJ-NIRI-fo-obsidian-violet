@@ -1,0 +1,36 @@
+# Thin caller for ADR 0024.
+# Day-to-day work lands on `personal` via PRs. `upstream` is a fast-forward
+# mirror of StatIndet/obsidian-violet main. Do not push to that upstream remote.
+#
+# Existing clones that still track origin/main:
+#   git fetch origin
+#   git checkout personal
+#   git branch --set-upstream-to=origin/personal personal
+#
+# No packages phase: this repo is not a package feed.
+#
+# Protected `personal` needs a PAT. Set repo secret FORK_SYNC_PAT with
+# contents + issues (and bypass / admin so force-with-lease to `personal`
+# succeeds). The reusable maps it as `token`. Empty secret falls back to
+# GITHUB_TOKEN inside the reusable, which will not push a protected branch.
+
+name: Sync personal fork
+
+on:
+  schedule:
+    # 04:00 America/El_Salvador (UTC-6) -> 10:00 UTC
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync:
+    uses: robert-flo/fleet/.github/workflows/sync-personal-fork.yml@main
+    with:
+      upstream_repo: StatIndet/obsidian-violet
+      upstream_branch: main
+    secrets:
+      token: ${{ secrets.FORK_SYNC_PAT }}
