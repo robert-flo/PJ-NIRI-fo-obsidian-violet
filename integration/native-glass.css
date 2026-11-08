@@ -1,5 +1,5 @@
-/* Enable only after Obsidian's native Electron window is confirmed transparent.
-   Copy into the test vault's .obsidian/snippets/ and enable as a CSS snippet.
+/* Installed and enabled by install.sh alongside the Electron transparency patch.
+   For manual CSS-only installs, enable only with a transparent host.
    This is static CSS, not a plugin or Style Settings integration. */
 body.theme-dark.mod-linux:not(.is-mobile) {
   --violet-shell: rgb(44 42 51 / 0.82);

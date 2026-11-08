@@ -9,3 +9,5 @@ docs/
 *.jpeg
 *.webp
 scripts/prepare-isolated-transparent-host.py
+
+__pycache__/
