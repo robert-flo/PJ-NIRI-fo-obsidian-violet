@@ -1,0 +1,37 @@
+// ==============================================================================
+// Violet — Full-width content & responsive tables
+// ==============================================================================
+
+body.mod-linux:not(.is-mobile) {
+  // Allow notes to utilize the entire width of the workspace pane
+  --file-line-width: 100%;
+
+  .markdown-source-view.mod-cm6 .cm-sizer,
+  .markdown-rendered .markdown-preview-sizer {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  // Fluid responsive tables that expand across available horizontal space
+  .markdown-rendered table,
+  .cm-table-widget,
+  .table-wrapper table {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: table !important;
+    table-layout: auto !important;
+    margin: 1.25rem 0 !important;
+    border-collapse: collapse !important;
+  }
+
+  .markdown-rendered th,
+  .markdown-rendered td,
+  .cm-table-widget th,
+  .cm-table-widget td {
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    padding: 8px 12px !important;
+    vertical-align: top !important;
+  }
+}

@@ -611,6 +611,35 @@ body.mod-linux:not(.is-mobile) .view-header .clickable-icon {
     transition: none;
   }
 }
+body.mod-linux:not(.is-mobile) {
+  --file-line-width: 100%;
+}
+body.mod-linux:not(.is-mobile) .markdown-source-view.mod-cm6 .cm-sizer,
+body.mod-linux:not(.is-mobile) .markdown-rendered .markdown-preview-sizer {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+body.mod-linux:not(.is-mobile) .markdown-rendered table,
+body.mod-linux:not(.is-mobile) .cm-table-widget,
+body.mod-linux:not(.is-mobile) .table-wrapper table {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: table !important;
+  table-layout: auto !important;
+  margin: 1.25rem 0 !important;
+  border-collapse: collapse !important;
+}
+body.mod-linux:not(.is-mobile) .markdown-rendered th,
+body.mod-linux:not(.is-mobile) .markdown-rendered td,
+body.mod-linux:not(.is-mobile) .cm-table-widget th,
+body.mod-linux:not(.is-mobile) .cm-table-widget td {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  padding: 8px 12px !important;
+  vertical-align: top !important;
+}
+
 @keyframes violet-tooltip-reveal {
   from {
     clip-path: inset(100% 50% 0 50% round 8px);
